@@ -1,0 +1,27 @@
+# Copyright (c) 2024 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+description: String input behavior
+
+compatible: "zmk,behavior-string-input"
+
+include: zero_param.yaml
+
+properties:
+  bindings:
+    type: phandles
+    description: |
+      <accept> <cancel>
+      accept binding is passed the string as parameter when accept-keys are pressed.
+      cancel binding is executed when cancel-keys are pressed.
+    required: true
+  accept-list:
+    type: array
+    description: |
+      Keys that end string input and pass the string to the accept-bindings
+    required: true
+  cancel-list:
+    type: array
+    description: |
+      Keys that end string input and execute cancel-bindings
+    required: true
